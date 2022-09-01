@@ -22,9 +22,9 @@ app.use(express.json())
 //adicionando CSS
 app.use(express.static('public'))
 
-
+var auth = false
 app.get('/users/add', (req, res) => {
-  res.render('userform')
+  res.render('userform', { auth })
 })
 
 
@@ -35,13 +35,13 @@ app.post('/users/save', (req, res) => {
   res.render('viewuser', { user: user })
 
 })
-const auth = false
-const approved = false
+
 //chamar página de login
 app.get('/', (req, res) => {
   res.render('login')
 })
 //pegar os dados do login
+
 
 const usuario = {
   login: 'teste',
@@ -50,7 +50,7 @@ const usuario = {
 app.post('/user/login', (req, res) => {
   const login = req.body.login
   const password = req.body.password
-  let auth = false
+
   if (login == usuario.login && password == usuario.password) {
     auth = true
 
@@ -66,7 +66,7 @@ const itens = ['ítem a', 'ítem b', 'ítem c']
 
 app.get('/home', (req, res) => {
 
-  res.render('home')
+  res.render('home', { auth })
 })
 
 app.use(function (req, res) {
