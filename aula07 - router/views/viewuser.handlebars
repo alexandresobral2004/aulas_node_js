@@ -1,0 +1,9 @@
+{{#if auth}}
+
+<h2>O usuário {{user.name}} tem {{user.age}} anos de idade!</h2>
+
+
+ <form action="/users/home" method="get">
+    <button type="submit"  class="btn btn-primary">Home</button>
+  </form>
+  {{/if}}

@@ -19,14 +19,12 @@ app.use(
 )
 app.use(express.json())
 
-//adicionando CSS
+//ADICIONANDO CAMINHO CSS
 app.use(express.static('public'))
 
-var auth = false
 app.get('/users/add', (req, res) => {
-  res.render('userform', { auth })
+  res.render('userform')
 })
-
 
 app.post('/users/save', (req, res) => {
   const name = req.body.name
@@ -36,40 +34,40 @@ app.post('/users/save', (req, res) => {
 
 })
 
-//chamar página de login
-app.get('/', (req, res) => {
-  res.render('login')
-})
-//pegar os dados do login
-
-
 const usuario = {
   login: 'teste',
-  password: 123
+  senha: 123
+
 }
+
+
+app.get('/', (req, res) => {
+
+  res.render('login')
+})
+
+var auth = false
+
 app.post('/user/login', (req, res) => {
   const login = req.body.login
-  const password = req.body.password
+  const senha = req.body.senha
+  let message = ""
 
-  if (login == usuario.login && password == usuario.password) {
+  if (login == usuario.login && senha == usuario.senha) {
     auth = true
-
-    res.render('home', { usuario: usuario, auth, itens: itens })
+    message = "Usuário logado com sucesso!"
+    res.render('home', { usuario: usuario, auth, message })
   }
   else {
     auth = false
-    res.render('login', { auth })
-
+    message = "Usuário e/ou senha inválidos!"
+    res.render('login', { auth, message })
   }
-})
-const itens = ['ítem a', 'ítem b', 'ítem c']
 
-app.get('/home', (req, res) => {
-
-  res.render('home', { auth })
 })
 
-app.use(function (req, res) {
+//pagina 404
+app.use(function (req, res, next) {
   res.status(404).render('404')
 })
 

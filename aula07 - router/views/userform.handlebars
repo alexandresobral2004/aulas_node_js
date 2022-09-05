@@ -8,9 +8,16 @@
     <input type="submit" value="Cadastrar" />
   </div>
 </form>
-<a href="/">Home</a>
+{{!-- <a href="/">Home</a> --}}
+<hr>
+<form action="/users/home" method="get">
 
-<h2>Faça o Login!!</h2>
-<a href="/">Login</a>
+<button type="submit"  class="btn btn-primary">Home</button>
+</form>
+{{else}}
+
+<form action="/users/add" method="get">
+      <h2>Faça o Login!</h2>
+<button type="submit"  class="btn btn-primary">Login</button>
 
  {{/if }}
