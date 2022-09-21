@@ -1,4 +1,5 @@
 const User = require('../model/User')
+const Book = require('../model/Book')
 
 
 module.exports = class UserController {
@@ -22,8 +23,8 @@ module.exports = class UserController {
     res.redirect('/users/allUsers')
 
   }
-  static async home(req, res) {
-    res.render('users/home')
+  static home(req, res) {
+    res.render('dashboard')
   }
 
   static async allUsers(req, res) {

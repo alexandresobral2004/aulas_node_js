@@ -1,0 +1,39 @@
+<h1>Todos os Livros</h1>
+
+
+
+<ul class="user_list list-group">
+  {{#each books}}
+
+    <li class="list-group-item">
+      <div class="col-md-3">
+        <label for="">{{this.nome}}</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">{{this.autor}}</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">{{this.edicao}}</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">{{this.Book.User}}</label>
+      </div>
+      <div class="col-md-4 actions">
+        <a href="/book/edit/{{this.id}}">
+          {{> edit_user}}
+        </a>
+        <form action="/book/removeBook" method="post">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <button type="submit">
+            {{> del_user}}
+          </button>
+        </form>
+      </div>
+    </li>
+
+  {{/each}}
+</ul>
+
+
+
+</div>
