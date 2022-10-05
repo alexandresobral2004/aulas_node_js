@@ -1,32 +1,28 @@
-<h1>Todos os Usuários</h1>
-
-
-
 <ul class="user_list list-group">
-  {{#each users}}
+  {{#each books}}
 
     <li class="list-group-item">
       <div class="col-md-3">
         <label for="">{{this.nome}}</label>
       </div>
       <div class="col-md-3">
-        <label for="">{{this.email}}</label>
+        <label for="">{{this.autor}}</label>
       </div>
       <div class="col-md-3">
-        <label for="">{{this.password}}</label>
+        <label for="">{{this.edicao}}</label>
       </div>
-
+      {{!-- 
       <div class="col-md-4 actions">
-        <a href="/users/edit/{{this.id}}">
+        <a href="/book/edit/{{this.id}}">
           {{> edit_user}}
         </a>
-        <form action="/users/remove" method="post">
+        <form action="/book/removeBook" method="post">
           <input type="hidden" name="id" value="{{this.id}}">
           <button type="submit">
             {{> del_user}}
           </button>
         </form>
-      </div>
+      </div> --}}
     </li>
 
   {{/each}}

@@ -29,11 +29,11 @@
       <div class="col-md-4">
         <label for="" class="form-label">Proprietário:</label>
         <select class="form-select" aria-label="Default select example" name="userId">
-          <option selected>Selecione</option>
-          {{#each users}}
-            <option value="{{this.id}}">{{this.nome}}</option>
 
-          {{/each}}
+
+          <option value="{{users.id}}">{{users.nome}}</option>
+
+
         </select>
       </div>
     </div>

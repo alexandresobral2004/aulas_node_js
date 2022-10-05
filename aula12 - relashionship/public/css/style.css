@@ -54,7 +54,7 @@
 .form-control textarea {
   padding: 7px;
   border-radius: 3px;
-  border: 1px solid #ccc;
+  border: 1px solid 	#F8F8F8;
 }
 
 form input[type='submit'] {
@@ -97,7 +97,7 @@ li label{
   font-size: 1.5rem;
 }
 .back_view{
-  background-color: DCDCDC;
+  background-color: 	#D8D8D8;
   display: flex;
 }
 .back_view button {
@@ -109,4 +109,15 @@ li label{
   margin-top: 0px;
   margin-left: 20px;
 
+}
+
+.message {
+  padding: 1em;
+  color: #004085;
+  background-color: #cce5ff;
+  border: 1px soli d#b8daff;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto 2em;
+  max-width: 60%;
 }

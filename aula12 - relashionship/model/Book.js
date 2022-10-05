@@ -2,7 +2,10 @@ const { DataTypes } = require('sequelize')
 const db = require('../db/conn')
 const User = require('../model/User');
 
+
+
 const Book = db.define('Book', {
+
   nome: {
     type: DataTypes.STRING,
     allowNull: false
@@ -17,10 +20,15 @@ const Book = db.define('Book', {
   },
 });
 //relacionamento entre entidades
-//um plivro pertence ao usuário, a chave estrangeira fica em book
-Book.belongsTo(User)
-//um usuário tem muitos livros, a chave estrangeira fica em Tought
-User.hasMany(Book)
+//um livro pertence ao usuário, a chave estrangeira fica em book
+Book.belongsTo(User, {
+  constraints: true,
+  foreignKey: 'UserId'
+})
+//um usuário tem muitos livros, a chave estrangeira fica em Book
+User.hasMany(Book, {
+  onDelete: 'CASCADE'
+})
 
 
 module.exports = Book

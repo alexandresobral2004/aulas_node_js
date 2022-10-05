@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Biblioteca</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{#if session.userid}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuário
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/users/add">Novo</a></li>
+              <li><a class="dropdown-item" href="/users/allUsers">Todos os usuário</a></li>
+              {{!-- <li>
+              <hr class="dropdown-divider">
+            </li> --}}
+
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Livros
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/book/add">Novo Livro</a></li>
+              <li><a class="dropdown-item" href="/book/allBooks">Todos os Livros</a></li>
+              <li><a class="dropdown-item" href="/book/allBooksbyUser">Livros por Usuário</a></li>
+              {{!-- <li>
+              <hr class="dropdown-divider">
+            </li> --}}
+
+            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/logout">Logout</a>
+          </li>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/users/login">Login</a>
+          </li>
+        {{/if}}
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<!--
+   <li><a href="/">Home</a></li>
+        <li><a href="/users/add">Novo Usuário</a></li>
+        <li><a href="/users/allUsers">Todos os usuários</a></li>
+        <li><a href="/book/add">Novo Livro</a></li>
+        <li><a href="/book/allBooks">Todos os Livros</a></li>
+        <li><a href="/book/allBooksbyUser">Livros por Usuário</a></li>
+        
+  -->

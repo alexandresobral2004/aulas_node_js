@@ -1,23 +1,19 @@
 <h1>Todos os Livros</h1>
-
-
-
 <ul class="user_list list-group">
   {{#each books}}
 
     <li class="list-group-item">
       <div class="col-md-3">
-        <label for="">{{this.nome}}</label>
+        <label for="">{{nome}}</label>
       </div>
       <div class="col-md-3">
-        <label for="">{{this.autor}}</label>
+        <label for="">{{autor}}</label>
       </div>
       <div class="col-md-3">
-        <label for="">{{this.edicao}}</label>
+        <label for="">{{edicao}}</label>
       </div>
-      <div class="col-md-3">
-        <label for="">{{this.Book.User}}</label>
-      </div>
+
+
       <div class="col-md-4 actions">
         <a href="/book/edit/{{this.id}}">
           {{> edit_user}}
@@ -33,7 +29,3 @@
 
   {{/each}}
 </ul>
-
-
-
-</div>

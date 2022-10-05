@@ -16,17 +16,31 @@
   </head>
 
   <body>
-    <nav id="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/users/add">Novo Usuário</a></li>
-        <li><a href="/users/allUsers">Todos os usuários</a></li>
-        <li><a href="/book/add">Novo Livro</a></li>
-        <li><a href="/book/allBooks">Todos os Livros</a></li>
-      </ul>
-    </nav>
+
+    {{> navbar}}
+
+
     <div class="container">
+
       {{{body}}}
+
+      {{#if messages.message}}
+
+        <div class="message">
+          {{messages.message}}
+
+        </div>
+        {{!-- <div class="message">
+          {{messages.message}}
+        </div> --}}
+      {{/if}}
+      {{#if message}}
+        <div class="message">
+          {{message}}
+
+        </div>
+      {{/if}}
+
     </div>
 
   </body>

@@ -8,8 +8,12 @@ const User = db.define('User', {
     type: DataTypes.STRING,
     required: true
   },
-  idade: {
-    type: DataTypes.INTEGER,
+  email: {
+    type: DataTypes.STRING,
+    required: true
+  },
+  password: {
+    type: DataTypes.STRING,
     required: true
   },
 

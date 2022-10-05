@@ -1,0 +1,26 @@
+<div class="back_view">
+  <form action="/book/allBooksbyUser" method="post" class="row m-3">
+
+
+    <div class="row align-items-start">
+      <div class="col-md-8">
+        <label for="edicao" class="form-label">Selecione o usuário:</label>
+        <select class="form-select" aria-label="Default select example" name="userId">
+          <option selected>Selecione</option>
+          {{#each users}}
+            <option value="{{this.id}}">{{this.nome}}</option>
+
+          {{/each}}
+        </select>
+      </div>
+    </div>
+
+    <br>
+    <div class="col-sm-2">
+      <input type="submit" value="Atualizar" />
+    </div>
+
+
+</div>
+
+{{> books_user}}

@@ -1,9 +1,12 @@
 const { Sequelize } = require('sequelize')
 
+
+
 const sequelize = new Sequelize('aulas', 'root', '12345678', {
   host: 'localhost',
   dialect: 'mysql',
 })
+
 
 try {
   sequelize.authenticate()
